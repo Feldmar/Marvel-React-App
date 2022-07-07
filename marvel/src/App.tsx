@@ -2,13 +2,15 @@ import React from 'react';
 import './App.css';
 import Header from './components/header';
 import HeroCard from './components/hero-card';
-import Render from './services/marvelAPI';
+import useRender from './services/marvelAPI';
 
 function App() {
+  const {characterList, loading} = useRender()
+  console.log(characterList);
   
   return (
     <>
-    <Render/>
+    
     <Header />
     <div className ="scroll-wrapper">
       <div className="card-area">

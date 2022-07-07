@@ -1,4 +1,5 @@
 import React from 'react';
+import Render from '../services/marvelAPI';
 
 const HeroCard = () => {
   return (
@@ -8,7 +9,7 @@ const HeroCard = () => {
         
       </div>
       <div className="hero-name">
-        fwgf
+      
       </div>
       </div>
       

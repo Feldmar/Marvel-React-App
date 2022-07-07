@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import CharacterModel from '../models/character-model';
-function Render(){
+
+function useRender(){
   const [characterList, setCharacterList] = useState<Array<CharacterModel>>([])
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -21,12 +22,13 @@ function Render(){
           image: item.thumbnail.path+"/portrait_fantastic."+item.thumbnail.extension,
           name:item.name
         })
-        
+        setCharacterList(heroesArray)
       });
       console.log(response, "response");
     }).catch((error)=>{
       console.error(error,"error")
     })
   }
+  return {characterList, loading}
 }
-export default Render;
+export default useRender;
