@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.characters-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: start;
+  gap: 20px 0px; 
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.characters-title{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Faster One', cursive;
+  font-size: 30px;
+  color:rgb(177, 4, 4)
 }
-
-.App-link {
-  color: #61dafb;
+.hero-card{
+  margin: 0 auto;
+  padding: 20px;
+  border: 10px solid transparent;
+  border-image: linear-gradient(to top, transparent 0%, #f16b18 90%);
+  border-image-slice: 1;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-name {
+  max-width: 170px;
+  height: 70px;
+  font-family: 'Zen Loop', cursive;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(84, 6, 6);
+}
+header{
+  padding: auto;
+}
+header img {
+  margin: 0 auto;
+  max-width: 200px;
 }
