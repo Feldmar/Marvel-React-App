@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { CharacterModel } from "../../models/character-model";
-import { Filter, MarvelList } from "../../models/common";
+import { Filter } from "../../models/common";
 import MarvelApi from "../../services/marvelAPI";
 
 function useCharacters() {
