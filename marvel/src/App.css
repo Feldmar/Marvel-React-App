@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
 
 .characters-block {
   display: grid;
@@ -17,24 +17,26 @@
 }
 .hero-card{
   margin: 0 auto;
-  padding: 20px;
+  padding: 25px;
+  background-image: url('https://p.favim.com/orig/2018/11/25/comics-line-black-and-white-Favim.com-6626365.png');
+  background-position: top right;
   border: 10px solid transparent;
-  border-image: linear-gradient(to top, transparent 0%, #f16b18 90%);
-  border-image-slice: 1;
+  border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
 }
 .hero-name {
   max-width: 170px;
   height: 70px;
-  font-family: 'Zen Loop', cursive;
-  font-size: 25px;
+  font-family: 'Bayon', sans-serif;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
-  color: rgb(84, 6, 6);
+  color: rgb(17, 17, 17);
 }
+
 header{
   padding: auto;
 }
 header img {
   margin: 0 auto;
-  max-width: 200px;
+  max-width: 150px;
 }
