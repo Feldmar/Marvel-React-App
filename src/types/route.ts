@@ -5,4 +5,5 @@ export type TRoute = {
     element?: ReactNode
     children?:  TRoute[]
     name: string //опционально
+    index?: boolean
 }

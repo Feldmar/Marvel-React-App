@@ -28,19 +28,17 @@ export const Routes: TRoute[] = [
 
 
 function AppRouting () {
-    const context = useContext(AppContext)
-    console.log(Routes);
-    
+    // const context = useContext(AppContext)
+        
     const routesValidate = () => {
-        //@ts-ignore
-        // if (context.role === 'user') {
-        //     return Routes.filter((el) => el.userRole !== 'admin')
-        // }
         return Routes
     }
+    const routes = useRoutes(routesValidate())
+    console.log(Routes);
+    
     return (
         <>
-            {useRoutes(routesValidate())}
+            {routes}
             {/* <button onClick={() => {
                 //@ts-ignore
                 context.auhtHandler()
