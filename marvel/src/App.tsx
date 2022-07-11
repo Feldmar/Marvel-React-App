@@ -1,19 +1,22 @@
 import './App.css';
 import CharactersWrapper from './components/characters';
 import Header from './components/header';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter  } from 'react-router-dom';
+import AppRouting from './routing/routing';
 
 
 function App() {
   
   return (
-    <>
+    
+    <div className='wrapper main'>
     <BrowserRouter>
     <Header />
-    {/* <CharactersWrapper /> */}
+    <AppRouting />
+  
     </BrowserRouter>
    
-    </>
+    </div>
   );
 }
 

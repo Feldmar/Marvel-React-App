@@ -3,11 +3,6 @@ import { useRoutes } from "react-router-dom";
 import CharactersWrapper from "../components/characters";
 import CharactersInfo from "../components/characters-info";
 import AppContext from "../components/context/context";
-// import Books from "../books";
-// import Characters from "../characters";
-// import CharactersF from "../characters/characters-f";
-// import FormComponent from "../components/form";
-// import AppContext from "../context/context";
 
 import { TRoute } from "../types/route";
 import { Paths } from "./path";
@@ -21,7 +16,6 @@ export const ChartersRoutes: TRoute[] = [
 // const TestComponent: FC<{children: any}> = ({children}) => {
 //     return (
 //         <>
-//             <div>extra Books</div>
 //             {children}
 //         </> 
 //     )
@@ -30,7 +24,6 @@ export const ChartersRoutes: TRoute[] = [
 export const Routes: TRoute[] = [
     {path: Paths.main, element: null, name: 'Home'},
     {path: Paths.characters, children: ChartersRoutes, name: 'Characters'},
-
 ]
 
 
@@ -39,13 +32,19 @@ function AppRouting () {
     console.log(Routes);
     
     const routesValidate = () => {
-        
+        //@ts-ignore
+        // if (context.role === 'user') {
+        //     return Routes.filter((el) => el.userRole !== 'admin')
+        // }
         return Routes
     }
     return (
         <>
             {useRoutes(routesValidate())}
-            
+            {/* <button onClick={() => {
+                //@ts-ignore
+                context.auhtHandler()
+            }}>Login</button> */}
         </>
         )
 }
