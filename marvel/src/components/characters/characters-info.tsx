@@ -1,5 +1,4 @@
 import { Spin } from "antd";
-import React from "react";
 import { useParams } from "react-router-dom";
 import { useCharacter } from "../hooks/characters-hooks";
 import HeroCard from "./hero-card";
