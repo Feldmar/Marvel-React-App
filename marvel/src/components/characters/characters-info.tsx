@@ -11,6 +11,9 @@ const CharactersInfo = () => {
             <div className="characters-info">
                 {data && <HeroCard character={data}/>}
             </div>
+            <div>{data?.name}</div>
+            <div>{data?.description ? data?.description  : 'No information available for this character.'}</div>
+            {/* <div>{data?.events}</div> */}
         </Spin>
     )
 }

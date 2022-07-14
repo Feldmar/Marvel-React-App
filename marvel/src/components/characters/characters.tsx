@@ -15,13 +15,15 @@ const CharactersWrapper = () => {
 			  			return <HeroCard key={index} character={character} />
 					})}
 		  	</div>
-		  	<Pagination
-			defaultCurrent={1 || filter?.count }
-			defaultPageSize={filter?.count ? filter?.count : 5}
-			total={filter?.limit ? filter?.limit : 100}
-			showSizeChanger={true}
-			showQuickJumper={true}
-		  	/>
+		  	
+				<Pagination
+            defaultCurrent={filter?.count || 1}
+            defaultPageSize={filter?.count ? filter?.count : 10}
+            total={filter?.limit}
+            showSizeChanger={true}
+						showQuickJumper={true}
+						// onChange={}
+          />
 	  		</div>
 		</Spin>
  	)

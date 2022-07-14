@@ -6,7 +6,7 @@ import { MarvelList } from '../models/common';
 
 export default class MarvelApi {
 	static async getCharacters(): Promise<AxiosResponse<{data: MarvelList<CharacterModel[]>}>> {
-		return $api.get('characters', { params: {limit: 10, offset: 0} })
+		return $api.get('characters', { params: {limit: 100, offset: 0} })
 	}
 	static async getCharacter(id: string): Promise<AxiosResponse<{data: MarvelList<CharacterModel[]>}>> {
 		return $api.get('characters/' + id)
