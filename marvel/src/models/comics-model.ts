@@ -8,14 +8,28 @@ export type ComicsModel = {
   	},
 	diamondCode: string,
 	format: string,
-	textObjects:Array<string>,
-	collections:Array<string>,
+	textObjects: any,
+	collections: any,
 	creators: {
+		available: any,
 		items: {
-			name: string
+			name: string,
+			role: string
 		}
 	},
 	series: {
+		resourceURI: string,
 		name: string
-	}
+	},
+	stories: {
+		available: any,
+		items: [{
+			resourceURI: string,
+			name: string,
+			type: string
+		}]
+	},
+	prices: {
+		price: number,
+	} 
 }
