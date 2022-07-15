@@ -12,10 +12,10 @@ export type ComicsModel = {
 	collections: any,
 	creators: {
 		available: any,
-		items: {
+		items: [{
 			name: string,
 			role: string
-		}
+		}]
 	},
 	series: {
 		resourceURI: string,

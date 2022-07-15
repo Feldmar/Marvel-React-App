@@ -12,7 +12,7 @@ export default class MarvelApi {
 		return $api.get('characters/' + id)
 	}
 	static async getComics(): Promise<AxiosResponse<{data: MarvelList<ComicsModel[]>}>> {
-		return $api.get('comics', { params: {limit: 10, offset: 0} })
+		return $api.get('comics', { params: {limit: 100, offset: 0} })
 	}
 	static async getComic(id: string): Promise<AxiosResponse<{data: MarvelList<ComicsModel[]>}>> {
 		return $api.get('comics/' + id)

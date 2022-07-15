@@ -7,7 +7,7 @@ header{
   align-items: center;
 }
 header img {
-  max-width: 150px;
+  width: 150px;
 }
 
 .characters-block {

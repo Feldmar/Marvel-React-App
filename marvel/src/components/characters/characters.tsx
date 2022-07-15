@@ -1,4 +1,5 @@
 import { Pagination, Spin } from "antd";
+import Search from "antd/lib/transfer/search";
 import { useCharacters } from "../hooks/characters-hooks";
 import HeroCard from "./hero-card";
 
@@ -10,6 +11,13 @@ const CharactersWrapper = () => {
 		<Spin spinning={loading}>
 	  		<div className="characters-wrapper">
 		  		<div className="characters-title">Characters</div>
+				  <Search
+      placeholder="search"
+    //   onSearch={onSearch}
+    //   style={{
+    //     width: 200,
+    //   }}
+    />
 		  		<div className="characters-block">
 					{data?.map((character, index) => {
 			  			return <HeroCard key={index} character={character} />
