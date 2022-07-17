@@ -9,7 +9,6 @@ function useCharacters() {
     const [filter, setFilter] = useState<Filter | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<any>(null)
-
     const getData = async () => {
         setLoading(true);
         try {               

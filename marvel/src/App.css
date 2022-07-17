@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 header{
   display: flex;
   flex-direction: column;
@@ -9,7 +9,33 @@ header{
 header img {
   width: 150px;
 }
-
+menu{
+  display: flex;
+  font-family: 'Graduate', cursive;
+}
+.menu-home{
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(110, 237, 110);
+  font-size: 20px;
+  color: rgb(255, 183, 0);
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+}
+.menu-characters{
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(215, 55, 58);
+  font-size: 20px;
+  color: rgb(0, 247, 255);
+  border-radius: 50% 30% 50% 40% / 30% 40% 30% 40%;
+}
+.menu-comics{
+  padding: 10px;
+  background-color: rgb(55, 53, 179);
+  font-size: 20px;
+  color: rgb(245, 246, 234);
+  border-radius: 70% 30% 30% 70% / 80% 40% 80% 40%;
+}
 .characters-block {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -17,6 +43,7 @@ header img {
   justify-items: center;
 }
 .characters-title{
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   font-family: 'Faster One', cursive;
@@ -70,4 +97,12 @@ header img {
   color: rgb(17, 17, 17);
 }
 
+.characters-wrapper .ant-input-affix-wrapper{
+  width: 200px;
+  display: flex;
+  margin: 0 auto 20px auto;
+  border: solid 6px rgb(219, 20, 20);
+  outline: solid 6px #888;
 
+
+}
