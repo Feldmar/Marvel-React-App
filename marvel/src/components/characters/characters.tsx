@@ -1,15 +1,21 @@
-import { Pagination, Spin } from "antd";
+import { Spin } from "antd";
 import Search from "antd/lib/transfer/search";
 import { useState } from "react";
 import { useCharacters } from "../hooks/characters-hooks";
+import Pagination from "../pagination/pagination";
 import HeroCard from "./hero-card";
 
 const CharactersWrapper = () => {
   	const {data, loading, filter} = useCharacters();
-	const [search, setSearch] = useState("")
+	const [search, setSearch] = useState("");
+	const[currentPage, setCurrentPage] = useState(1)
+	const [perPage] = useState(10)
   	console.log(loading);
 	console.log(filter);
 	
+	const lastIndex = currentPage * perPage;
+	const firstIndex = lastIndex - perPage;
+	const currentC= data?.slice(firstIndex,lastIndex)
 	
   	return (
 		<Spin spinning={loading}>
@@ -26,12 +32,8 @@ const CharactersWrapper = () => {
 		</div>
 		  	
 				<Pagination
-            defaultCurrent={filter?.count || 1}
-            defaultPageSize={filter?.count ? filter?.count : 10}
-            total={filter?.limit}
-            showSizeChanger={true}
-						showQuickJumper={true}
-						// onChange={}
+					perPage={perPage}
+					totalC={data?.length}
           /> 
 	  		</div>
 		</Spin>
