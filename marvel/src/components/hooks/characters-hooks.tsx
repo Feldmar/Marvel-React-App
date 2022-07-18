@@ -6,17 +6,21 @@ import MarvelApi from "../../services/marvelAPI";
 
 function useCharacters() {
     const [data, setData] = useState<[] | CharacterModel[]>([])
-    const [filter, setFilter] = useState<Filter | null>(null)
+    const [filter, setFilter] = useState<Filter>({offset: 0, limit: 10, page: 1})
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<any>(null)
-    const getData = async () => {
+    const getData = async (params?: Filter) => {
         setLoading(true);
         try {               
             // const {data: {data: {results, ...rest}}} = await MarvelApi.getCharacters()
-            const response = await MarvelApi.getCharacters()
+            const response = await MarvelApi.getCharacters(params ? params : filter)
             const { results, ...rest} = response.data.data
             setData(results);
-            setFilter(rest)
+            const newFilter = {
+                ...rest,
+                page: params?.page ? params?.page : 1
+            } as Filter
+            setFilter(newFilter)
         } catch (error: any) {
             setError(error.message);
         } finally {
@@ -27,7 +31,11 @@ function useCharacters() {
     useEffect(() => {
         getData()
     }, [])
-    return {data, loading, error, filter}
+
+    const handlerFilter = (params: Filter) => {
+        getData(params)
+    }
+    return {data, loading, error, filter, handlerFilter}
 }
 function useCharacter(id?: string) {    
     const [data, setData] = useState<null | CharacterModel>(null)

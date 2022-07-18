@@ -6,8 +6,10 @@ export type MarvelList<T> = {
     total: number
 }
 export type Filter = {
-    count: number,
+    count?: number,
     limit: number,
     offset: number,
-    total: number
+    total?: number,
+    page?: number,
+    name?: string
 }
