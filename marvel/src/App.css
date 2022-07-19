@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+body {
+  background-image: url('images/1.svg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-clip: border-box;
+  background-size: cover;
+}
 header{
   display: flex;
   flex-direction: column;
@@ -11,36 +19,25 @@ header img {
 }
 menu{
   display: flex;
+  flex-wrap: wrap;
   font-family: 'Graduate', cursive;
+  justify-content: center;
 }
-.menu-home{
-  margin-right: 10px;
+.menu-home, .menu-characters, .menu-comics {
   padding: 10px;
-  background-color: rgb(110, 237, 110);
+  background-color: rgb(249, 62, 5);
   font-size: 20px;
-  color: rgb(255, 183, 0);
-  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  color: rgb(10, 10, 10);
+  border-radius:  60% 40% 60% 40% / 60% 40% 60% 40%;
 }
-.menu-characters{
-  margin-right: 10px;
-  padding: 10px;
-  background-color: rgb(215, 55, 58);
-  font-size: 20px;
-  color: rgb(0, 247, 255);
-  border-radius: 50% 30% 50% 40% / 30% 40% 30% 40%;
-}
-.menu-comics{
-  padding: 10px;
-  background-color: rgb(55, 53, 179);
-  font-size: 20px;
-  color: rgb(245, 246, 234);
-  border-radius: 70% 30% 30% 70% / 80% 40% 80% 40%;
-}
+
 .characters-block {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px 0px; 
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-rows: repeat(2, 400px);
   justify-items: center;
+  justify-content: center;
 }
 .characters-title{
   margin-bottom: 10px;
@@ -58,51 +55,57 @@ menu{
   border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
 }
 .hero-name {
-  max-width: 170px;
+  padding-top: 10px;
+  max-width: 150px;
   height: 70px;
   font-family: 'Bayon', sans-serif;
-  font-size: 22px;
-  text-align: center;
+  font-size: 20px;
   font-weight: bold;
   color: rgb(17, 17, 17);
 }
 
 .comics-block {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px 0px; 
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-rows: repeat(2, 400px);
   justify-items: center;
+  justify-content: center;
 }
 .comics-title{
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   font-family: 'Faster One', cursive;
   font-size: 30px;
-  color:rgb(5, 1, 126);
+  color:rgb(2, 14, 125)
 }
 .comics-card{
   padding: 25px;
   background-image: url('https://p.favim.com/orig/2018/11/25/comics-line-black-and-white-Favim.com-6626365.png');
   background-position: top right;
   border: 10px solid transparent;
-  border-image: linear-gradient(to right, rgb(71, 50, 157), rgb(26, 23, 24)) 1;
+  border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
 }
 .comics-name {
-  max-width: 170px;
+  padding-top: 10px;
+  max-width: 150px;
   height: 70px;
   font-family: 'Bayon', sans-serif;
-  font-size: 22px;
-  text-align: center;
+  font-size: 18px;
   font-weight: bold;
   color: rgb(17, 17, 17);
 }
 
-.characters-wrapper .ant-input-affix-wrapper{
+.characters-wrapper .ant-input-affix-wrapper,.comics-wrapper .ant-input-affix-wrapper {
   width: 200px;
   display: flex;
   margin: 0 auto 20px auto;
-  border: solid 6px rgb(219, 20, 20);
-  outline: solid 6px #888;
+  outline: solid 6px rgb(244, 240, 240);
+}
 
-
+.characters-wrapper .ant-pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }

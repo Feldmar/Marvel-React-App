@@ -12,4 +12,5 @@ export type Filter = {
     total?: number,
     page?: number,
     name?: string
+    title?: string
 }

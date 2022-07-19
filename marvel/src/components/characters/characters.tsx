@@ -7,14 +7,9 @@ import HeroCard from "./hero-card";
 const CharactersWrapper = () => {
   	const {data, loading, filter, handlerFilter} = useCharacters();
 	const [search, setSearch] = useState("");
-	const[currentPage, setCurrentPage] = useState(1)
-	const [perPage] = useState(10)
   	console.log(loading);
 	console.log(filter);
 	
-	const lastIndex = currentPage * perPage;
-	const firstIndex = lastIndex - perPage;
-	const currentC= data?.slice(firstIndex,lastIndex)
 	const handlerPagination = (page: number, pageSize: number) => {
 		console.log('page', page - 1);
 		console.log('pageSize', pageSize);
@@ -32,9 +27,7 @@ const CharactersWrapper = () => {
 			value={search}
       		placeholder="input search text"
 			onChange={handlerSerach} 
-			
-    	/>
-	{/* .filter((item)=> item.name.toLowerCase().includes(search)) */}
+		/>
 		  		<div className="characters-block">
 					{data?.map((character, index) => {
 			  			return <HeroCard key={index} character={character} />
@@ -46,10 +39,7 @@ const CharactersWrapper = () => {
 				pageSize={filter?.limit ? filter?.limit : 10}
 				onChange={handlerPagination}
 			/>
-				{/* <Pagination
-					perPage={perPage}
-					totalC={data?.length}
-          />  */}
+				
 	  		</div>
 		</Spin>
  	)
