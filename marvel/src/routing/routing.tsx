@@ -1,6 +1,5 @@
 import { useRoutes } from 'react-router-dom';
 import CharactersWrapper from 'src/components/characters/characters';
-import CharactersComics from 'src/components/characters/characters-comics';
 import CharactersInfo from 'src/components/characters/characters-info';
 import ComicsWrapper from 'src/components/comics/comics';
 import ComicsInfo from 'src/components/comics/comics-info';
@@ -10,7 +9,6 @@ import { Paths } from './path';
 export const ChartersRoutes: TRoute[] = [
     { path: '', element: <CharactersWrapper />, name: 'Characters' },
     { path: Paths.character, element: <CharactersInfo />, name: 'Characters1' },
-    { path: Paths.characte, element: <CharactersComics />, name: 'Characters2' }
 ];
 
 export const ComicsRoutes: TRoute[] = [

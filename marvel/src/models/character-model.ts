@@ -1,4 +1,5 @@
 export type CharacterModel = {
+    [x: string]: any
   	id: number | string,
   	image: string,
   	name: string,
