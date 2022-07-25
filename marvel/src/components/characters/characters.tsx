@@ -15,9 +15,9 @@ const CharactersWrapper = () => {
 		console.log('pageSize', pageSize);
 		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, name: search})
 	}
-	const handlerSerach = (e:any) => {		
+	const handlerSerach = (e:any, page: number) => {		
 		setSearch(e.target.value)
-		handlerFilter({...filter, name: e.target.value})
+		handlerFilter({...filter, name: e.target.value, offset: page = 1, page: page})
 	}
   	return (
 		<Spin spinning={loading}>
@@ -26,7 +26,7 @@ const CharactersWrapper = () => {
 		<Search
 			value={search}
       		placeholder="input search text"
-			onChange={handlerSerach} 
+			onChange= {(e)=> {handlerSerach(e, 1)}}
 		/>
 		  		<div className="characters-block">
 					{data?.map((character, index) => {

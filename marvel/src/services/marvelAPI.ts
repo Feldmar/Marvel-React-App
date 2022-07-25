@@ -11,6 +11,9 @@ export default class MarvelApi {
 	static async getCharacter(id: string): Promise<AxiosResponse<{data: MarvelList<CharacterModel[]>}>> {
 		return $api.get('characters/' + id)
 	}
+	static async getCharacterComics(id: string): Promise<AxiosResponse<{data: MarvelList<CharacterModel[]>}>> {
+		return $api.get('characters/' + id +'/comics?')
+	}
 	static async getComics(params: {limit: number, offset: number, title?: string}): Promise<AxiosResponse<{data: MarvelList<ComicsModel[]>}>> {
 		return $api.get('comics', {  params: {limit: params.limit, offset: params.offset, titleStartsWith: params.title ? params.title : undefined}})
 	}

@@ -10,6 +10,7 @@ body {
   background-size: cover;
 }
 header{
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,13 +23,10 @@ menu{
   flex-wrap: wrap;
   font-family: 'Graduate', cursive;
   justify-content: center;
+  padding-inline-start: 0px;
 }
 .menu-home, .menu-characters, .menu-comics {
-  padding: 10px;
-  background-color: rgb(249, 62, 5);
   font-size: 20px;
-  color: rgb(10, 10, 10);
-  border-radius:  60% 40% 60% 40% / 60% 40% 60% 40%;
 }
 
 .characters-block {
@@ -44,8 +42,9 @@ menu{
   display: flex;
   justify-content: center;
   font-family: 'Faster One', cursive;
-  font-size: 30px;
-  color:rgb(177, 4, 4)
+  font-size: 35px;
+  color:rgb(177, 4, 4);
+  filter: drop-shadow(3px -1px 0px rgb(247, 246, 246));
 }
 .hero-card{
   padding: 25px;
@@ -101,11 +100,71 @@ menu{
   width: 200px;
   display: flex;
   margin: 0 auto 20px auto;
-  outline: solid 6px rgb(244, 240, 240);
+  outline: solid 6px #7c4bb5;
 }
 
+.double-border-button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 10px;
+  padding: 10px 20px;
+  position: relative;
+  border: 2px solid #f1eeee;
+  border-radius:  60% 40% 60% 40% / 60% 40% 60% 40%;
+  background-color: rgb(219, 10, 10);
+  color: #f5f4ee;
+  transition: .4s;
+}
+.double-border-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border: 2px solid rgba(244, 237, 237, 0);
+  transition: .4s;
+}
+.double-border-button:hover:after {
+  border-radius:  70% 30% 70% 30% / 70% 30% 70% 30%;
+  border-color: #f9f4f4;
+  width: calc(100% - 10px);
+  height: calc(100% + 10px);
+}
+
+/* мучаем пагинацию */
 .characters-wrapper .ant-pagination{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 15px;
+}
+.comics-wrapper .ant-pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.characters-wrapper .ant-pagination-item{
+  margin-top: 5px;
+  background-color: #583580;
+}
+.characters-wrapper .ant-pagination-item a{
+  color: white;
+}
+.characters-wrapper .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
+  margin-top: 5px;
+  background-color:#583580;
+  color: white;
+}
+.characters-wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  margin-top: 5px;
+  background-color: #583580;
+  color: white;
+}
+.characters-wrapper .ant-select-dropdown{
+  margin-top: 5px;
+  background-color: #583580;
 }

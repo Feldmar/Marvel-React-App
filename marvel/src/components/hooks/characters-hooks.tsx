@@ -61,5 +61,29 @@ function useCharacter(id?: string) {
     }, [id])
     return {data, loading, error}
 }
-export { useCharacters, useCharacter }
+function useCharacterComics(id?: string) {    
+    const [data, setData] = useState<null | CharacterModel>(null)
+    const [loading, setLoading] = useState<boolean>(false)
+    const [error, setError] = useState<any>(null)
+
+    useEffect(() => {
+        if (id) {
+            setLoading(true);
+            (async () => {
+                try {
+                    const {data: {data}} = await MarvelApi.getCharacter(id)  
+                    console.log(data);
+                                  
+                    setData(data.results[0]);
+                } catch (error: any) {
+                    setError(error.message);
+                } finally {
+                    setLoading(false);
+                }
+              })();
+        }
+    }, [id])
+    return {data, loading, error}
+}
+export { useCharacters, useCharacter, useCharacterComics }
 

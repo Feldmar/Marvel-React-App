@@ -2,6 +2,8 @@ export enum Paths  {
   	'main' =  '/',
   	'characters' = '/characters',
   	'character' = '/characters/character/:id',
-		'comics' = '/comics',
+	'characte' = '/characters/character/:id//comics/:id',
+	
+	'comics' = '/comics',
   	'comic' = '/comics/comic/:id',
 }

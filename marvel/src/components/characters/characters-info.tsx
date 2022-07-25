@@ -1,11 +1,19 @@
 import { Spin } from "antd";
 import { useParams } from "react-router-dom";
+import { CharacterModel } from "src/models/character-model";
 import { useCharacter } from "../hooks/characters-hooks";
 import HeroCard from "./hero-card";
-
-const CharactersInfo = () => {
+type TProps = {
+	character : CharacterModel
+}
+const CharactersInfo:FC<TProps> = ({character})=> {
     const {id} = useParams();
     const {data, loading} = useCharacter(id);
+    const handler = (e: any) => {
+		if (true) {
+			navigate(`${character.id}/comics?`)
+		}
+	}
     return (
         <Spin spinning={loading}>
             <div className="characters-info">
@@ -34,7 +42,7 @@ const CharactersInfo = () => {
                     </li>
                     ))}
             </div>
-            <div>Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}
+            <div onClick={handler}>Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}
             {data?.comics.items.map((item,index) => (
                 <li key={index}>
                     {item.name} ({item.resourceURI})
