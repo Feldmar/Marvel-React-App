@@ -1,11 +1,8 @@
 export type CharacterModel = {
-    [x: string]: any
   	id: number | string,
   	image: string,
   	name: string,
   	description: string,
-  	modified: string
-  	resourceURI: string
   	thumbnail: {
     	extension: string,
     	path: string

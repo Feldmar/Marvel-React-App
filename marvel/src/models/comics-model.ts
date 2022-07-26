@@ -6,13 +6,10 @@ export type ComicsModel = {
     	extension: string,
     	path: string
   	},
-	diamondCode: string,
-	format: string,
-	textObjects: any,
-	collections: any,
 	creators: {
 		available: any,
 		items: [{
+			resourceURI: string,
 			name: string,
 			role: string
 		}]
@@ -29,7 +26,19 @@ export type ComicsModel = {
 			type: string
 		}]
 	},
-	prices: {
-		price: number,
-	} 
+	characters: {
+		available: any,
+		items: [{
+			resourceURI: string,
+			name: string
+		}]
+	},
+	events: {
+		available: any,
+		items: [{
+			resourceURI: string,
+			name: string,
+			type: string
+		}]
+	},
 }

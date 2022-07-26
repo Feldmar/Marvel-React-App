@@ -10,6 +10,9 @@ const Header = () => {
 	  <div className="menu-home"><NavLink to={Paths.main} className="double-border-button">Home</NavLink></div>
 	  <div className="menu-characters"><NavLink to={Paths.characters} className="double-border-button">Characters</NavLink> </div>
 	  <div className="menu-comics"><NavLink to={Paths.comics} className="double-border-button">Comics</NavLink></div>
+	  <div className="menu-creators"><NavLink to={Paths.creators} className="double-border-button">Creators</NavLink></div>
+	  <div className="menu-events"><NavLink to={Paths.events} className="double-border-button">Events</NavLink></div>
+
 	  </menu>
 		
 		</header>

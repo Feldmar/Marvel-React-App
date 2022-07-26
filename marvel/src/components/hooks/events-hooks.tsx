@@ -1,11 +1,10 @@
-
 import { useEffect, useState } from "react";
-import { CharacterModel } from "../../models/character-model";
+import { EventsModel } from "src/models/events-model";
 import { Filter } from "../../models/common";
 import MarvelApi from "../../services/marvelAPI";
 
-function useCharacters() {
-    const [data, setData] = useState<[] | CharacterModel[]>([])
+function useEvents() {
+    const [data, setData] = useState<[] | EventsModel[]>([])
     const [filter, setFilter] = useState<Filter>({offset: 0, limit: 10, page: 1})
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<any>(null)
@@ -13,7 +12,7 @@ function useCharacters() {
         setLoading(true);
         try {               
             // const {data: {data: {results, ...rest}}} = await MarvelApi.getCharacters()
-            const response = await MarvelApi.getCharacters(params ? params : filter)
+            const response = await MarvelApi.getEvents(params ? params : filter)
             const { results, ...rest} = response.data.data
             setData(results);
             const newFilter = {
@@ -37,8 +36,8 @@ function useCharacters() {
     }
     return {data, loading, error, filter, handlerFilter}
 }
-function useCharacter(id?: string) {    
-    const [data, setData] = useState<null | CharacterModel>(null)
+function useEvent(id?: string) {    
+    const [data, setData] = useState<null | EventsModel>(null)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<any>(null)
 
@@ -47,7 +46,7 @@ function useCharacter(id?: string) {
             setLoading(true);
             (async () => {
                 try {
-                    const {data: {data}} = await MarvelApi.getCharacter(id)  
+                    const {data: {data}} = await MarvelApi.getEvent(id)  
                     console.log(data);
                                   
                     setData(data.results[0]);
@@ -61,5 +60,5 @@ function useCharacter(id?: string) {
     }, [id])
     return {data, loading, error}
 }
-export { useCharacters, useCharacter }
+export { useEvents, useEvent }
 

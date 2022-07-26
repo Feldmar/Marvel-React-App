@@ -12,6 +12,12 @@ const ComicsInfo = () => {
                 {data && <ComicsCard comic={data}/>}
             </div>
             <div>Description: {data?.description ? data?.description  : 'No information available for this comics.'}</div>
+            <div>Characters: {data?.characters.available ? data?.characters.available : 'No characters available for this comics.'}
+                {data?.characters.items.map((item,index) => (
+                    <li key={index}>
+                        {item.name} ({ item.resourceURI})
+                    </li>
+                    ))} </div>
             <div>Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this comics.'}
                 {data?.stories.items.map((item,index) => (
                     <li key={index}>
@@ -25,7 +31,6 @@ const ComicsInfo = () => {
                     {item.name} ({item.role})
                     </li>
                     ))}</div>
-            <div>Prices: {data?.prices.price ? data?.prices.price : 'No prices available for this comics'}</div>
 
         </Spin>
     )

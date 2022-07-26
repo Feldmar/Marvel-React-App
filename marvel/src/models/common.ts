@@ -13,4 +13,5 @@ export type Filter = {
     page?: number,
     name?: string
     title?: string,
+    fullName?: string,
 }
