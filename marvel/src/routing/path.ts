@@ -8,4 +8,8 @@ export enum Paths  {
   	'creator' = '/creators/creator/:id',
 	'events' = '/events',
   	'event' = '/events/event/:id',
+	'series' = '/series',
+  	'part' = '/series/part/:id',
+	'stories' = '/stories',
+  	'story' = '/stories/story/:id',
 }

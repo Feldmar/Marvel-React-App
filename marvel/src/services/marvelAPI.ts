@@ -2,6 +2,8 @@ import { AxiosResponse } from 'axios'
 import { ComicsModel } from 'src/models/comics-model';
 import { CreatorsModel } from 'src/models/creators-model';
 import { EventsModel } from 'src/models/events-model';
+import { SeriesModel } from 'src/models/series-model';
+import { StoriesModel } from 'src/models/stories-model';
 import $api from '../http/axios';
 import {CharacterModel} from '../models/character-model';
 import { MarvelList } from '../models/common';
@@ -30,5 +32,17 @@ export default class MarvelApi {
 	}
 	static async getEvent(id: string): Promise<AxiosResponse<{data: MarvelList<EventsModel[]>}>> {
 		return $api.get('events/' + id)
+	}
+	static async getSeries(params: {limit: number, offset: number, title?: string}): Promise<AxiosResponse<{data: MarvelList<SeriesModel[]>}>> {
+		return $api.get('series', {  params: {limit: params.limit, offset: params.offset, titleStartsWith: params.title ? params.title : undefined}})
+	}
+	static async getPart(id: string): Promise<AxiosResponse<{data: MarvelList<SeriesModel[]>}>> {
+		return $api.get('series/' + id)
+	}
+	static async getStories(params: {limit: number, offset: number, title?: string}): Promise<AxiosResponse<{data: MarvelList<StoriesModel[]>}>> {
+		return $api.get('stories', {  params: {limit: params.limit, offset: params.offset, title: params.title ? params.title : undefined}})
+	}
+	static async getStory(id: string): Promise<AxiosResponse<{data: MarvelList<StoriesModel[]>}>> {
+		return $api.get('stories/' + id)
 	}
 }

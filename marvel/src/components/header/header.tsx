@@ -12,7 +12,8 @@ const Header = () => {
 	  <div className="menu-comics"><NavLink to={Paths.comics} className="double-border-button">Comics</NavLink></div>
 	  <div className="menu-creators"><NavLink to={Paths.creators} className="double-border-button">Creators</NavLink></div>
 	  <div className="menu-events"><NavLink to={Paths.events} className="double-border-button">Events</NavLink></div>
-
+	  <div className="menu-series"><NavLink to={Paths.series} className="double-border-button">Series</NavLink></div>
+	  <div className="menu-stories"><NavLink to={Paths.stories} className="double-border-button">Stories</NavLink></div>
 	  </menu>
 		
 		</header>
