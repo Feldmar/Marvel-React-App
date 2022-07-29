@@ -10,12 +10,14 @@ const CharactersInfo = ()=> {
    
     return (
         <Spin spinning={loading}>
+            <div className="characters-info-container info-container">
             <div className="characters-info">
                 {data && <HeroCard character={data}/>}
             </div>
-            <div>Name: {data?.name}</div>
-            <div>Description: {data?.description ? data?.description  : 'No information available for this character.'}</div>
-            <div>Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}
+            <div className="info-container-grid">
+            <div className="info-name">Name: {data?.name}
+            <div className="info-description">Description: {data?.description ? data?.description  : 'No information available for this character.'}</div></div>
+            <div className="info-stories">Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}
             {data?.stories.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -25,7 +27,7 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
-            <div>Events: {data?.events.available ? data?.events.available : 'No events available for this character.'}
+            <div className="info-events">Events: {data?.events.available ? data?.events.available : 'No events available for this character.'}
             {data?.events.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -35,7 +37,7 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
-            <div>Series: {data?.series.available ? data?.series.available : 'No series available for this character.'}
+            <div className="info-series">Series: {data?.series.available ? data?.series.available : 'No series available for this character.'}
             {data?.series.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -45,7 +47,7 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
-            <div>Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}
+            <div className="info-comics">Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}
             {data?.comics.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -55,6 +57,8 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
+            </div>
+           </div>
         </Spin>
     )
 }

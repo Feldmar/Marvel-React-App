@@ -15,13 +15,13 @@ const ComicsCard: FC<TProps> = ({comic}) => {
 		}
 	}
 	return (
-		<div className="comics-card" onClick={handler}>
-			<div className="comics-card-wrapper">
+		<div className="comics-card card" onClick={handler}>
+			<div className="comics-card-wrapper card-wrapper">
 				<div className="comics-image">
 					<Image className='image' src={comic.thumbnail.path + '/portrait_xlarge.' + comic.thumbnail.extension}/>
 				</div>
-				<div className="comics-name">
-					{comic.title}
+				<div className="comics-name card-name ">
+					<span>{comic.title}</span>
 				</div>
 			</div>      
 		</div>

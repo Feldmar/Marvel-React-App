@@ -15,13 +15,13 @@ const PartCard: FC<TProps> = ({part}) => {
 		}
 	}
 	return (
-		<div className="part-card" onClick={handler}>
-			<div className="part-card-wrapper">
+		<div className="part-card card" onClick={handler}>
+			<div className="part-card-wrapper card-wrapper">
 				<div className="part-image">
 					<Image className='image' src={part.thumbnail.path + '/portrait_xlarge.' + part.thumbnail.extension }/>
 				</div>
-				<div className="part-name">
-					{part.title}
+				<div className="part-name card-name ">
+					<span>{part.title}</span>
 				</div>
 			</div>      
 		</div>

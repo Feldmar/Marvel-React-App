@@ -13,7 +13,7 @@ const CreatorsInfo = ()=> {
             <div className="creator-info">
                 {data && <CreatorCard creator={data}/>}
             </div>
-            <div>Name: {data?.fullName}</div>
+            <div>Name: {data?.firstName}</div>
             <div>Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this creator.'}
             {data?.stories.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)

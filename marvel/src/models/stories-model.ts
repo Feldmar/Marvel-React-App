@@ -45,7 +45,7 @@ export type StoriesModel = {
         role: string,
     }]
 },
-originalissue:{
+originalIssue:{
         resourceURI: string,
         name: string,
     },

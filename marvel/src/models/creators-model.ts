@@ -1,7 +1,7 @@
 export type CreatorsModel = {
     id:number | string,
     fullName  : string,
-   
+    firstName: string,
     thumbnail: {
         extension: string,
         path: string

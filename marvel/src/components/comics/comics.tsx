@@ -15,20 +15,20 @@ const ComicsWrapper = () => {
 		console.log('pageSize', pageSize);
 		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, title: search})
 	}
-	const handlerSerach = (e:any) => {		
+	const handlerSerach = (e:any, page: number) => {		
 		setSearch(e.target.value)
-		handlerFilter({...filter, title: e.target.value})
+		handlerFilter({...filter, title: e.target.value, offset: page = 1, page: page})
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="comics-wrapper">
-		  		<div className="comics-title">Comics</div>
+	  		<div className="comics-wrapper wrapper">
+		  		<div className="comics-title wrapper-title">Comics</div>
 		  	<Search
 			value={search}
       		placeholder="input search text"
-			onChange={handlerSerach} 
+			onChange= {(e)=> {handlerSerach(e, 1)}}
 		/>
-				<div className="comics-block">
+				<div className="comics-block card-block">
 					{data?.map((comic, index) => {
 			  			return <ComicsCard key={index} comic={comic} />
 					})}

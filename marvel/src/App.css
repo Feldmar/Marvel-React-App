@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 body {
-  background-image: url('images/1.svg');
+  background-image: url('images/nebula.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
@@ -25,11 +26,8 @@ menu{
   justify-content: center;
   padding-inline-start: 0px;
 }
-.menu-home, .menu-characters, .menu-comics {
-  font-size: 20px;
-}
 
-.characters-block {
+.card-block {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -37,7 +35,7 @@ menu{
   justify-items: center;
   justify-content: center;
 }
-.characters-title{
+.wrapper-title{
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
@@ -46,64 +44,65 @@ menu{
   color:rgb(177, 4, 4);
   filter: drop-shadow(3px -1px 0px rgb(247, 246, 246));
 }
-.hero-card{
+.card{
+  max-width: 270px;
+  max-height: 400px;
   padding: 25px;
-  background-image: url('https://p.favim.com/orig/2018/11/25/comics-line-black-and-white-Favim.com-6626365.png');
+  background-image: url('images/card.jpg');
   background-position: top right;
   border: 10px solid transparent;
   border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
 }
-.hero-name {
+.card-name {
   padding-top: 10px;
   max-width: 150px;
   height: 70px;
-  font-family: 'Bayon', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: rgb(17, 17, 17);
-}
-
-.comics-block {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-template-rows: repeat(2, 400px);
-  justify-items: center;
-  justify-content: center;
-}
-.comics-title{
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  font-family: 'Faster One', cursive;
-  font-size: 30px;
-  color:rgb(2, 14, 125)
-}
-.comics-card{
-  padding: 25px;
-  background-image: url('https://p.favim.com/orig/2018/11/25/comics-line-black-and-white-Favim.com-6626365.png');
-  background-position: top right;
-  border: 10px solid transparent;
-  border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
-}
-.comics-name {
-  padding-top: 10px;
-  max-width: 150px;
-  height: 70px;
-  font-family: 'Bayon', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 18px;
   font-weight: bold;
   color: rgb(17, 17, 17);
+  text-align: center;
 }
-
-.characters-wrapper .ant-input-affix-wrapper,.comics-wrapper .ant-input-affix-wrapper {
-  width: 200px;
+.card-name span {
+  padding: 3px;
+  background-color: rgb(8, 8, 8);
+  color:aliceblue;
+}
+.card-wrapper {
   display: flex;
-  margin: 0 auto 20px auto;
-  outline: solid 6px #7c4bb5;
+  flex-direction: column;
+  align-items: center;
+}
+.info-container-grid{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.info-container{
+  display: flex;
+  width: 100%;
+}
+.characters-info{
+  display: flex;
+  justify-content: center;
+  width: 50%
+}
+.info-name ,.info-description,.info-series,.info-stories,.info-comics ,.info-events{
+  margin:10px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(251, 249, 249);
+  background-color: rgb(19, 17, 17);
+}
+.info-container-grid li {
+  list-style-type: none;
 }
 
+ /* кнопки меню  */
 .double-border-button {
+  font-size: 20px;
   text-decoration: none;
   display: inline-block;
   margin: 10px 10px;
@@ -134,37 +133,46 @@ menu{
   width: calc(100% - 10px);
   height: calc(100% + 10px);
 }
+a.double-border-button.active {
+  color: rgb(219, 10, 10);
+  background-color: #fff;
+  border: 2px solid rgb(219, 10, 10);
+}
+a.double-border-button.active:hover:after{
+  border-color: rgb(219, 10, 10);
+}
+/* мучаем  серч и пагинацию */
+.wrapper .ant-input-affix-wrapper {
+  width: 200px;
+  display: flex;
+  margin: 0 auto 20px auto;
+  outline: solid 6px #7c4bb5;
+}
 
-/* мучаем пагинацию */
-.characters-wrapper .ant-pagination{
+.wrapper .ant-pagination{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 15px;
 }
-.comics-wrapper .ant-pagination{
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-}
-.characters-wrapper .ant-pagination-item{
+.wrapper .ant-pagination-item{
   margin-top: 5px;
   background-color: #583580;
 }
-.characters-wrapper .ant-pagination-item a{
+.wrapper .ant-pagination-item a{
   color: white;
 }
-.characters-wrapper .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
+.wrapper .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
   margin-top: 5px;
   background-color:#583580;
   color: white;
 }
-.characters-wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+.wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector{
   margin-top: 5px;
   background-color: #583580;
   color: white;
 }
-.characters-wrapper .ant-select-dropdown{
+.wrapper .ant-select-dropdown{
   margin-top: 5px;
   background-color: #583580;
 }

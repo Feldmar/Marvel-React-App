@@ -13,22 +13,22 @@ const SeriesWrapper = () => {
 	const handlerPagination = (page: number, pageSize: number) => {
 		console.log('page', page - 1);
 		console.log('pageSize', pageSize);
-		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, name: search})
+		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, title: search})
 	}
 	const handlerSerach = (e:any, page: number) => {		
 		setSearch(e.target.value)
-		handlerFilter({...filter, name: e.target.value, offset: page = 1, page: page})
+		handlerFilter({...filter, title: e.target.value, offset: page = 1, page: page})
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="series-wrapper" >
-		  		<div className="series-title">Events</div>
+	  		<div className="series-wrapper wrapper" >
+		  		<div className="series-title wrapper-title">Series</div>
 		<Search
 			value={search}
       		placeholder="input search text"
 			onChange= {(e)=> {handlerSerach(e, 1)}}
 		/>
-		  		<div className="events-block">
+		  		<div className="series-block card-block">
 					{data?.map((part, index) => {
 			  			return <PartCard key={index} part={part} />
 					})}

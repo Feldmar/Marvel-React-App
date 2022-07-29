@@ -13,22 +13,22 @@ const EventsWrapper = () => {
 	const handlerPagination = (page: number, pageSize: number) => {
 		console.log('page', page - 1);
 		console.log('pageSize', pageSize);
-		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, name: search})
+		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, title: search})
 	}
 	const handlerSerach = (e:any, page: number) => {		
 		setSearch(e.target.value)
-		handlerFilter({...filter, name: e.target.value, offset: page = 1, page: page})
+		handlerFilter({...filter, title: e.target.value, offset: page = 1, page: page})
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="events-wrapper" >
-		  		<div className="events-title">Events</div>
+	  		<div className="events-wrapper wrapper" >
+		  		<div className="events-title wrapper-title">Events</div>
 		<Search
 			value={search}
       		placeholder="input search text"
 			onChange= {(e)=> {handlerSerach(e, 1)}}
 		/>
-		  		<div className="events-block">
+		  		<div className="events-block card-block">
 					{data?.map((event, index) => {
 			  			return <EventCard key={index} event={event} />
 					})}

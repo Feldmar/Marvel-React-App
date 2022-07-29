@@ -21,8 +21,8 @@ export default class MarvelApi {
 	static async getComic(id: string): Promise<AxiosResponse<{data: MarvelList<ComicsModel[]>}>> {
 		return $api.get('comics/' + id)
 	}
-	static async getCreators(params: {limit: number, offset: number, fullName?: string}): Promise<AxiosResponse<{data: MarvelList<CreatorsModel[]>}>> {
-		return $api.get('creators', {  params: {limit: params.limit, offset: params.offset, nameStartsWith: params.fullName ? params.fullName : undefined}})
+	static async getCreators(params: {limit: number, offset: number, firstName?: string}): Promise<AxiosResponse<{data: MarvelList<CreatorsModel[]>}>> {
+		return $api.get('creators', {  params: {limit: params.limit, offset: params.offset, nameStartsWith: params.firstName ? params.firstName : undefined}})
 	}
 	static async getCreator(id: string): Promise<AxiosResponse<{data: MarvelList<CreatorsModel[]>}>> {
 		return $api.get('creators/' + id)
@@ -39,8 +39,8 @@ export default class MarvelApi {
 	static async getPart(id: string): Promise<AxiosResponse<{data: MarvelList<SeriesModel[]>}>> {
 		return $api.get('series/' + id)
 	}
-	static async getStories(params: {limit: number, offset: number, title?: string}): Promise<AxiosResponse<{data: MarvelList<StoriesModel[]>}>> {
-		return $api.get('stories', {  params: {limit: params.limit, offset: params.offset, title: params.title ? params.title : undefined}})
+	static async getStories(params: {limit: number, offset: number}): Promise<AxiosResponse<{data: MarvelList<StoriesModel[]>}>> {
+		return $api.get('stories', {  params: {limit: params.limit, offset: params.offset}})
 	}
 	static async getStory(id: string): Promise<AxiosResponse<{data: MarvelList<StoriesModel[]>}>> {
 		return $api.get('stories/' + id)

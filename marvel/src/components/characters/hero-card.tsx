@@ -15,13 +15,13 @@ const HeroCard: FC<TProps> = ({character}) => {
 		}
 	}
 	return (
-		<div className="hero-card" onClick={handler}>
-			<div className="hero-card-wrapper">
+		<div className="hero-card card" onClick={handler}>
+			<div className="hero-card-wrapper card-wrapper">
 				<div className="hero-image">
 					<Image className='image' src={character.thumbnail.path + '/portrait_xlarge.' + character.thumbnail.extension }/>
 				</div>
-				<div className="hero-name">
-					{character.name}
+				<div className="hero-name card-name ">
+					<span>{character.name}</span>
 				</div>
 			</div>      
 		</div>

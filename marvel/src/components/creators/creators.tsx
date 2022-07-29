@@ -13,22 +13,22 @@ const CreatorsWrapper = () => {
 	const handlerPagination = (page: number, pageSize: number) => {
 		console.log('page', page - 1);
 		console.log('pageSize', pageSize);
-		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, name: search})
+		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, firstName: search})
 	}
 	const handlerSerach = (e:any, page: number) => {		
 		setSearch(e.target.value)
-		handlerFilter({...filter, name: e.target.value, offset: page = 1, page: page})
+		handlerFilter({...filter, firstName: e.target.value, offset: page = 1, page: page})
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="creators-wrapper" >
-		  		<div className="creators-title">Creators</div>
+	  		<div className="creators-wrapper wrapper" >
+		  		<div className="creators-title wrapper-title">Creators</div>
 		<Search
 			value={search}
       		placeholder="input search text"
 			onChange= {(e)=> {handlerSerach(e, 1)}}
 		/>
-		  		<div className="creators-block">
+		  		<div className="creators-block card-block">
 					{data?.map((creator, index) => {
 			  			return <CreatorCard key={index} creator={creator} />
 					})}

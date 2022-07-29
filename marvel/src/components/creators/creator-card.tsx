@@ -15,13 +15,13 @@ const CreatorCard: FC<TProps> = ({creator}) => {
 		}
 	}
 	return (
-		<div className="creator-card" onClick={handler}>
-			<div className="creator-card-wrapper">
+		<div className="creator-card card" onClick={handler}>
+			<div className="creator-card-wrapper card-wrapper">
 				<div className="creator-image">
 					<Image className='image' src={creator.thumbnail.path + '/portrait_xlarge.' + creator.thumbnail.extension }/>
 				</div>
-				<div className="creator-name">
-					{creator.fullName}
+				<div className="creator-name card-name ">
+					<span>{creator.firstName}</span>
 				</div>
 			</div>      
 		</div>

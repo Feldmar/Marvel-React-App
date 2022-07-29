@@ -21,14 +21,14 @@ const CharactersWrapper = () => {
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="characters-wrapper" >
-		  		<div className="characters-title">Characters</div>
+	  		<div className="characters-wrapper wrapper" >
+		  		<div className="characters-title wrapper-title">Characters</div>
 		<Search
 			value={search}
       		placeholder="input search text"
 			onChange= {(e)=> {handlerSerach(e, 1)}}
 		/>
-		  		<div className="characters-block">
+		  		<div className="characters-block card-block">
 					{data?.map((character, index) => {
 			  			return <HeroCard key={index} character={character} />
 					})}
