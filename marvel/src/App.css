@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 body {
   background-image: url('images/nebula.jpg');
   background-attachment: fixed;
@@ -19,7 +22,7 @@ header{
 header img {
   width: 150px;
 }
-menu{
+.header-navigation{
   display: flex;
   flex-wrap: wrap;
   font-family: 'Graduate', cursive;
@@ -41,10 +44,13 @@ menu{
   justify-content: center;
   font-family: 'Faster One', cursive;
   font-size: 35px;
+  filter: drop-shadow(4px -2px 0px rgb(247, 246, 246));
+}
+.characters-title{
   color:rgb(177, 4, 4);
-  filter: drop-shadow(3px -1px 0px rgb(247, 246, 246));
 }
 .card{
+  cursor: pointer;
   max-width: 270px;
   max-height: 400px;
   padding: 25px;
@@ -52,6 +58,16 @@ menu{
   background-position: top right;
   border: 10px solid transparent;
   border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
+}
+.card:hover{
+  border-image: linear-gradient(to right, rgb(233, 228, 228), rgb(27, 77, 202)) 1;
+  transform: scale(1.1);
+  transition: transform .5s;
+}
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .card-name {
   padding-top: 10px;
@@ -68,36 +84,64 @@ menu{
   background-color: rgb(8, 8, 8);
   color:aliceblue;
 }
-.card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.info-container-grid{
-  width: 30%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  
-}
 .info-container{
   display: flex;
-  width: 100%;
+  width: 80%;
+  justify-content: center;
+  margin:0 auto;
 }
-.characters-info{
+.info-card{
   display: flex;
   justify-content: center;
-  width: 50%
+  width: 40%;
+  pointer-events: none;
 }
-.info-name ,.info-description,.info-series,.info-stories,.info-comics ,.info-events{
+.info-container-flex{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch
+}
+.info-container-flex li{
+  list-style-type: none;
+}
+.info-item{
   margin:10px;
   padding: 10px;
   text-align: center;
-  color: rgb(251, 249, 249);
-  background-color: rgb(19, 17, 17);
+  background-position: center center;
+  border: 10px solid transparent;
+  border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
 }
-.info-container-grid li {
-  list-style-type: none;
+.info-item:hover{
+  border-image: linear-gradient(to left, rgb(233, 228, 228), rgb(97, 220, 234)) 1;
+}
+.info-item span{
+  padding: 2px;
+  color: rgb(241, 235, 235);
+  font-size: 18px;
+  font-family: 'Special Elite', cursive;
+  background-color: #0b0b0b;
+  opacity: 0.8;
+}
+.info-item li a span:hover{
+  color: yellow;
+}
+
+.info-name{
+  background-image: url('images/namebc2.jpg');
+}
+.info-series{
+  background-image: url('images/serbc.jpg');
+}
+.info-stories{
+  background-image: url('images/storbc.jpg');
+}
+.info-events{
+  background-image: url('images/eventbc.jpg');
+}
+.info-comics{
+  background-image: url('images/combc.jpg');
 }
 
  /* кнопки меню  */
@@ -175,4 +219,45 @@ a.double-border-button.active:hover:after{
 .wrapper .ant-select-dropdown{
   margin-top: 5px;
   background-color: #583580;
+}
+@media (max-width: 900px) {
+  .info-container{
+    width: 100%;
+  }
+  .info-card{
+    width: 40%;
+  }
+  .info-container-flex{
+    width: 50%;
+  }
+}
+@media (max-width: 650px) {
+  .header-navigation{
+    display: none;
+    z-index: 9999;
+  }
+  .header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .hide{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline-start: 0px;
+  }
+  .info-container{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-card{
+    margin-top: 20px;
+    width: 70%;
+  }
+  .info-container-flex{
+    width: 90%;
+  }
 }

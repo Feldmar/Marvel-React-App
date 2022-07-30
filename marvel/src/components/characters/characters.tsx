@@ -21,7 +21,7 @@ const CharactersWrapper = () => {
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="characters-wrapper wrapper" >
+	  		<div className="characters-wrapper" >
 		  		<div className="characters-title wrapper-title">Characters</div>
 		<Search
 			value={search}

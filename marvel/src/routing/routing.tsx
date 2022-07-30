@@ -38,6 +38,7 @@ export const StoriesRoutes: TRoute[] = [
     { path: '', element: <StoriesWrapper />, name: 'Stories' },
     { path: Paths.story, element: <StoryInfo />, name: 'Story' },
 ];
+
 export const Routes: TRoute[] = [
     { path: Paths.main, element: null, name: 'Home' },
     { path: Paths.characters, children: ChartersRoutes, name: 'Characters' },

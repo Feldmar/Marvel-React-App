@@ -1,4 +1,4 @@
-import { Spin } from "antd";
+import {  Spin } from "antd";
 import { Link, useParams } from "react-router-dom";
 import { useCharacter } from "../hooks/characters-hooks";
 import HeroCard from "./hero-card";
@@ -7,52 +7,51 @@ const CharactersInfo = ()=> {
     const {id} = useParams();
     const {data, loading} = useCharacter(id);
     console.log(data);
-   
     return (
         <Spin spinning={loading}>
             <div className="characters-info-container info-container">
-            <div className="characters-info">
-                {data && <HeroCard character={data}/>}
+            <div className="characters-info info-card">
+                {data && <HeroCard character={data} />}
             </div>
-            <div className="info-container-grid">
-            <div className="info-name">Name: {data?.name}
-            <div className="info-description">Description: {data?.description ? data?.description  : 'No information available for this character.'}</div></div>
-            <div className="info-stories">Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}
+            <div className="info-container-flex">
+            <div className="info-name info-item"><span>Name:</span> <span>{data?.name}</span>
+            <div><span>Description:</span> <span>{data?.description ? data?.description  : 'No information available for this character.'}</span></div></div>
+            <div className="info-stories info-item"><span>Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}</span>
             {data?.stories.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/stories/story/' + id}>{item.name}</Link>
+                        <Link to={'/stories/story/' + id}><span>{item.name}</span></Link>
                     </li>
                 )
             })}
             </div>
-            <div className="info-events">Events: {data?.events.available ? data?.events.available : 'No events available for this character.'}
+            <div className="info-events info-item"><span>Events: {data?.events.available ? data?.events.available : 'No events available for this character.'}</span>
             {data?.events.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/events/event/' + id}>{item.name}</Link>
+                        <Link to={'/events/event/' + id}><span>{item.name}</span></Link>
                     </li>
                 )
             })}
             </div>
-            <div className="info-series">Series: {data?.series.available ? data?.series.available : 'No series available for this character.'}
+            <div className="info-series info-item"><span>Series:{data?.series.available ? data?.series.available : 'No series available for this character.'}</span> 
             {data?.series.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/series/part/' + id}>{item.name}</Link>
+                        <Link to={'/series/part/' + id}><span>{item.name}</span></Link>
                     </li>
                 )
             })}
             </div>
-            <div className="info-comics">Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}
+            <div className="info-comics info-item"><span>Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}</span>
             {data?.comics.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/comics/comic/' + id}>{item.name}</Link>
+                        <Link to={'/comics/comic/' + id}><span>{item.name}</span></Link>
                     </li>
                 )
             })}

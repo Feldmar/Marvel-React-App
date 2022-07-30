@@ -14,7 +14,7 @@ const StoriesWrapper = () => {
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="stories-wrapper wrapper" >
+	  		<div className="stories-wrapper" >
 		  		<div className="stories-title wrapper-title">Stories</div>
 				 
 		  		<div className="stories-block card-block">

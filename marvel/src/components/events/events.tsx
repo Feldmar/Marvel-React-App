@@ -21,7 +21,7 @@ const EventsWrapper = () => {
 	}
   	return (
 		<Spin spinning={loading}>
-	  		<div className="events-wrapper wrapper" >
+	  		<div className="events-wrapper" >
 		  		<div className="events-title wrapper-title">Events</div>
 		<Search
 			value={search}
