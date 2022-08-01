@@ -294,3 +294,7 @@ a.double-border-button.active:hover:after{
     width: 90%;
   }
 }
+@media (max-width: 576px){
+.ant-pagination-options {
+  display:inline-block;
+}}

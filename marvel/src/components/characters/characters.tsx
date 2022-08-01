@@ -7,12 +7,8 @@ import HeroCard from "./hero-card";
 const CharactersWrapper = () => {
   	const {data, loading, filter, handlerFilter} = useCharacters();
 	const [search, setSearch] = useState("");
-  	console.log(loading);
-	console.log(filter);
 	
 	const handlerPagination = (page: number, pageSize: number) => {
-		console.log('page', page - 1);
-		console.log('pageSize', pageSize);
 		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, name: search})
 	}
 	const handlerSearch = (e:any, page: number) => {		

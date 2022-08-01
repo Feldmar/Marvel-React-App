@@ -2,15 +2,6 @@ import { NavLink } from "react-router-dom";
 import { Paths } from "src/routing/path";
 
 const Header = () => { 
-	const headerNav = document.querySelectorAll(".header-navigation");
-	// const headerLogo = document.querySelectorAll(".header-logo");
-	// headerLogo.forEach((el:any) => {
-    // 	el.onclick = () => {
-    //         headerNav.forEach((le:any) => {
-    //             le.classList.toggle("hide");
-	// 		})
-	// 	}
-	// });
   	return(
 		<header className="marvel-header">  
 	  		<img alt="Marvel" className="header-logo" onClick={() => {

@@ -7,12 +7,8 @@ import ComicsCard from "./comics-card";
 const ComicsWrapper = () => {
   	const {data, loading, filter, handlerFilter} = useComics();
 	const [search, setSearch] = useState("");
-  	console.log(loading);
-	console.log(filter);
 	
 	const handlerPagination = (page: number, pageSize: number) => {
-		console.log('page', page - 1);
-		console.log('pageSize', pageSize);
 		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, title: search})
 	}
 	const handlerSearch = (e:any, page: number) => {		

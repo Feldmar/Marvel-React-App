@@ -7,7 +7,6 @@ import PartCard from "./part-card";
 const PartInfo = ()=> {
     const {id} = useParams();
     const {data, loading} = usePart(id);
-    console.log(data);
    
     return (
         <Spin spinning={loading}>

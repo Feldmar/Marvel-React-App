@@ -6,7 +6,6 @@ import HeroCard from "./hero-card";
 const CharactersInfo = ()=> {
     const {id} = useParams();
     const {data, loading} = useCharacter(id);
-    console.log(data);
     return (
         <Spin spinning={loading}>
             <div className="characters-info-container info-container">

@@ -12,7 +12,6 @@ function useComics() {
     const getData = async (params?: Filter) => {
         setLoading(true);
         try {               
-            // const {data: {data: {results, ...rest}}} = await MarvelApi.getCharacters()
             const response = await MarvelApi.getComics(params ? params : filter)
             const { results, ...rest} = response.data.data
             setData(results);

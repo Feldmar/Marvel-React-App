@@ -6,8 +6,6 @@ import CreatorCard from "./creator-card";
 const CreatorsInfo = ()=> {
     const {id} = useParams();
     const {data, loading} = useCreator(id);
-    console.log(data);
-   
     return (
         <Spin spinning={loading}>
             <div className="creator-info-container info-container">

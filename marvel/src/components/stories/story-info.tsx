@@ -7,7 +7,6 @@ import StoryCard from "./story-card";
 const StoryInfo = ()=> {
     const {id} = useParams();
     const {data, loading} = useStory(id);
-    console.log(data);
    
     return (
         <Spin spinning={loading}>

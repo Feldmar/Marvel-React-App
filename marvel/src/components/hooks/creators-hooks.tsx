@@ -8,10 +8,10 @@ function useCreators() {
     const [filter, setFilter] = useState<Filter>({offset: 0, limit: 10, page: 1})
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<any>(null)
+    
     const getData = async (params?: Filter) => {
         setLoading(true);
         try {               
-            // const {data: {data: {results, ...rest}}} = await MarvelApi.getCharacters()
             const response = await MarvelApi.getCreators(params ? params : filter)
             const { results, ...rest} = response.data.data
             setData(results);

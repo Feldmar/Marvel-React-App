@@ -7,8 +7,7 @@ import EventCard from "./event-card";
 const EventInfo = ()=> {
     const {id} = useParams();
     const {data, loading} = useEvent(id);
-    console.log(data);
-   
+
     return (
         <Spin spinning={loading}>
             <div className="characters-info-container info-container">

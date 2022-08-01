@@ -54,7 +54,7 @@ function AppRouting() {
         return Routes;
     };
     const routes = useRoutes(routesValidate());
-    console.log(Routes);
+
     return(
         <>
             {routes}
