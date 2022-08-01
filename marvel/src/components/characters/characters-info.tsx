@@ -14,9 +14,9 @@ const CharactersInfo = ()=> {
                 {data && <HeroCard character={data} />}
             </div>
             <div className="info-container-flex">
-            <div className="info-name info-item"><span>Name:</span> <span>{data?.name}</span>
-            <div><span>Description:</span> <span>{data?.description ? data?.description  : 'No information available for this character.'}</span></div></div>
-            <div className="info-stories info-item"><span>Stories: {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}</span>
+            <div className="info-name info-item"><span><b>Name: </b>{data?.name}</span>
+            <div><span><b>Description:</b> {data?.description ? data?.description  : 'No information available for this character.'}</span></div></div>
+            <div className="info-stories info-item"><span><b>Stories:</b> {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}</span>
             {data?.stories.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -26,7 +26,7 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
-            <div className="info-events info-item"><span>Events: {data?.events.available ? data?.events.available : 'No events available for this character.'}</span>
+            <div className="info-events info-item"><span><b>Events:</b> {data?.events.available ? data?.events.available : 'No events available for this character.'}</span>
             {data?.events.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -36,7 +36,7 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
-            <div className="info-series info-item"><span>Series:{data?.series.available ? data?.series.available : 'No series available for this character.'}</span> 
+            <div className="info-series info-item"><span><b>Series: </b>{data?.series.available ? data?.series.available : 'No series available for this character.'}</span> 
             {data?.series.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
@@ -46,7 +46,7 @@ const CharactersInfo = ()=> {
                 )
             })}
             </div>
-            <div className="info-comics info-item"><span>Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}</span>
+            <div className="info-comics info-item"><span><b>Comics:</b> {data?.comics.available ? data?.comics.available : 'No comics available for this character.'}</span>
             {data?.comics.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (

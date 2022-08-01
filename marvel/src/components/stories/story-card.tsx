@@ -18,7 +18,7 @@ const StoryCard: FC<TProps> = ({story}) => {
 		<div className="story-card card" onClick={handler}>
 			<div className="story-card-wrapper card-wrapper">
 				<div className="story-image">
-					<Image className='image' src="https://www.meme-arsenal.com/memes/7d661030bf7dd4b3754e1a8b682220b4.jpg" />
+					<Image className='image' src="https://www.meme-arsenal.com/memes/482d11436bb5284150a46758244b9711.jpg" />
 				</div>
 				<div className="story-name card-name ">
 					<span> {story.originalIssue.name}</span>

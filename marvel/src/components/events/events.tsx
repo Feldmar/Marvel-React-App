@@ -15,7 +15,7 @@ const EventsWrapper = () => {
 		console.log('pageSize', pageSize);
 		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, title: search})
 	}
-	const handlerSerach = (e:any, page: number) => {		
+	const handlerSearch = (e:any, page: number) => {		
 		setSearch(e.target.value)
 		handlerFilter({...filter, title: e.target.value, offset: page = 1, page: page})
 	}
@@ -26,7 +26,7 @@ const EventsWrapper = () => {
 		<Search
 			value={search}
       		placeholder="input search text"
-			onChange= {(e)=> {handlerSerach(e, 1)}}
+			onChange= {(e)=> {handlerSearch(e, 1)}}
 		/>
 		  		<div className="events-block card-block">
 					{data?.map((event, index) => {

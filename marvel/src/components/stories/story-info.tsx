@@ -11,61 +11,73 @@ const StoryInfo = ()=> {
    
     return (
         <Spin spinning={loading}>
-            <div className="story-info">
+            <div className="story-info-container info-container">
+            <div className="story-info info-card">
                 {data && <StoryCard story={data}/>}
             </div>
-            <div>Name: {data?.title}</div>
-            <div>Description: {data?.description ? data?.description  : 'No information available for this story.'}</div>
-            <div>Events: {data?.events.available ? data?.events.available : 'No events available for this story.'}
+            <div className="info-container-flex">
+            <div className="info-name info-item"><span><b>Name:</b> {data?.title}</span><br />
+            <span><b>Description:</b> {data?.description ? data?.description  : 'No information available for this story.'}</span></div>
+            <div className="info-events info-item"><span><b>Events:</b> {data?.events.available ? data?.events.available : 'No events available for this story.'}</span>
             {data?.events.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/events/event/' + id}>{item.name}</Link>
+                        <Link to={'/events/event/' + id}>
+                            <span>{item.name}</span>
+                            </Link>
                     </li>
                 )
             })}
             </div>
-            <div>Series: {data?.series.available ? data?.series.available : 'No series available for this story.'}
+            <div className="info-series info-item"><span><b>Series:</b> {data?.series.available ? data?.series.available : 'No series available for this story.'}</span>
             {data?.series.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/series/part/' + id}>{item.name}</Link>
+                        <Link to={'/series/part/' + id}>
+                            <span>{item.name}</span>
+                            </Link>
                     </li>
                 )
             })}
             </div>
-            <div>Comics: {data?.comics.available ? data?.comics.available : 'No comics available for this story.'}
+            <div className="info-comics info-item"><span><b>Comics:</b> {data?.comics.available ? data?.comics.available : 'No comics available for this story.'}</span>
             {data?.comics.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/comics/comic/' + id}>{item.name}</Link>
+                        <Link to={'/comics/comic/' + id}>
+                            <span>{item.name}</span>
+                            </Link>
                     </li>
                 )
             })}
             </div>
-            <div>Creators: {data?.creators.available ? data?.creators.available : 'No creators available for this story.'}
+            <div className="info-creators info-item"> <span><b>Creators: </b>{data?.creators.available ? data?.creators.available : 'No creators available for this story.'}</span>
             {data?.creators.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/creators/creator/' + id}>{item.name}</Link>
+                        <Link to={'/creators/creator/' + id}>
+                            <span>{item.name}</span>
+                            </Link>
                     </li>
                 )
             })}
             </div>
-            <div>Characters: {data?.characters.available ? data?.characters.available : 'No characters available for this story.'}
+            <div className="info-characters info-item"><span><b>Characters: </b>{data?.characters.available ? data?.characters.available : 'No characters available for this story.'}</span>
             {data?.characters.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)
                 return (
                     <li key={item.name}>
-                        <Link to={'/characters/character/' + id}>{item.name}</Link>
+                        <Link to={'/characters/character/' + id}>
+                           <span>{item.name}</span> 
+                            </Link>
                     </li>
                 )
-            })}
-            </div>
+            })}</div>
+            </div></div>
         </Spin>
     )
 }

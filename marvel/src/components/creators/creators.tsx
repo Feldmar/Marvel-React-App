@@ -15,7 +15,7 @@ const CreatorsWrapper = () => {
 		console.log('pageSize', pageSize);
 		handlerFilter({limit: pageSize, offset: (page - 1) * 10, page: page, firstName: search})
 	}
-	const handlerSerach = (e:any, page: number) => {		
+	const handlerSearch = (e:any, page: number) => {		
 		setSearch(e.target.value)
 		handlerFilter({...filter, firstName: e.target.value, offset: page = 1, page: page})
 	}
@@ -26,7 +26,7 @@ const CreatorsWrapper = () => {
 		<Search
 			value={search}
       		placeholder="input search text"
-			onChange= {(e)=> {handlerSerach(e, 1)}}
+			onChange= {(e)=> {handlerSearch(e, 1)}}
 		/>
 		  		<div className="creators-block card-block">
 					{data?.map((creator, index) => {

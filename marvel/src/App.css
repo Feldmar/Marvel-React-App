@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 body {
-  background-image: url('images/nebula.jpg');
+  background-image: url('images/bcbc.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
@@ -21,6 +21,7 @@ header{
 }
 header img {
   width: 150px;
+  filter: drop-shadow(4px 4px 10px #f5f6f5)
 }
 .header-navigation{
   display: flex;
@@ -49,6 +50,21 @@ header img {
 .characters-title{
   color:rgb(177, 4, 4);
 }
+.comics-title{
+  color:rgb(4, 16, 177);
+}
+.creators-title{
+  color:rgb(205, 141, 50);
+}
+.events-title{
+  color:rgb(40, 114, 27);
+}
+.series-title{
+  color:rgb(101, 23, 97);
+}
+.stories-title{
+  color:rgb(198, 37, 142);
+}
 .card{
   cursor: pointer;
   max-width: 270px;
@@ -57,10 +73,10 @@ header img {
   background-image: url('images/card.jpg');
   background-position: top right;
   border: 10px solid transparent;
-  border-image: linear-gradient(to right, rgb(170, 2, 2), rgb(26, 23, 24)) 1;
+  border-image: linear-gradient(to left, rgb(170, 2, 2), rgb(24, 24, 24)) 1;
 }
 .card:hover{
-  border-image: linear-gradient(to right, rgb(233, 228, 228), rgb(27, 77, 202)) 1;
+  border-image: linear-gradient(to left, rgb(233, 228, 228), rgb(27, 77, 202)) 1;
   transform: scale(1.1);
   transition: transform .5s;
 }
@@ -72,18 +88,24 @@ header img {
 .card-name {
   padding-top: 10px;
   max-width: 150px;
-  height: 70px;
+  height: 75px;
   font-family: 'Roboto Slab', serif;
   font-size: 18px;
   font-weight: bold;
-  color: rgb(17, 17, 17);
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-name span {
   padding: 3px;
   background-color: rgb(8, 8, 8);
   color:aliceblue;
 }
+.comics-name{
+  padding-top: 5px;
+  font-size: 15px;
+}
+
 .info-container{
   display: flex;
   width: 80%;
@@ -124,6 +146,10 @@ header img {
   background-color: #0b0b0b;
   opacity: 0.8;
 }
+.info-item span b{
+  font-size: 20px;
+  color: rgb(148, 35, 35)
+}
 .info-item li a span:hover{
   color: yellow;
 }
@@ -143,7 +169,12 @@ header img {
 .info-comics{
   background-image: url('images/combc.jpg');
 }
-
+.info-characters{
+  background-image: url('images/chbc.jpg');
+}
+.info-creators{
+  background-image: url('images/crbc.jpg');
+}
  /* кнопки меню  */
 .double-border-button {
   font-size: 20px;
@@ -154,7 +185,7 @@ header img {
   position: relative;
   border: 2px solid #f1eeee;
   border-radius:  60% 40% 60% 40% / 60% 40% 60% 40%;
-  background-color: rgb(219, 10, 10);
+  background: linear-gradient(70deg, rgb(255, 21, 0), rgb(13, 13, 13));
   color: #f5f4ee;
   transition: .4s;
 }
@@ -178,9 +209,10 @@ header img {
   height: calc(100% + 10px);
 }
 a.double-border-button.active {
-  color: rgb(219, 10, 10);
-  background-color: #fff;
+  color: rgb(3, 3, 3);
+  background: linear-gradient(70deg, rgb(244, 243, 242), rgb(110, 2, 2));
   border: 2px solid rgb(219, 10, 10);
+  filter: drop-shadow(4px 4px 10px #f5f6f5)
 }
 a.double-border-button.active:hover:after{
   border-color: rgb(219, 10, 10);
@@ -190,7 +222,7 @@ a.double-border-button.active:hover:after{
   width: 200px;
   display: flex;
   margin: 0 auto 20px auto;
-  outline: solid 6px #7c4bb5;
+  outline: solid 6px #8c1111;
 }
 
 .wrapper .ant-pagination{
@@ -201,24 +233,25 @@ a.double-border-button.active:hover:after{
 }
 .wrapper .ant-pagination-item{
   margin-top: 5px;
-  background-color: #583580;
+  background: linear-gradient(70deg, rgb(35, 35, 34), rgb(110, 2, 2));
 }
 .wrapper .ant-pagination-item a{
   color: white;
 }
 .wrapper .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
   margin-top: 5px;
-  background-color:#583580;
+  background: linear-gradient(70deg, rgb(35, 35, 34), rgb(110, 2, 2));
   color: white;
 }
 .wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector{
   margin-top: 5px;
-  background-color: #583580;
+  background: linear-gradient(70deg, rgb(35, 35, 34), rgb(110, 2, 2));
   color: white;
 }
 .wrapper .ant-select-dropdown{
   margin-top: 5px;
-  background-color: #583580;
+  color: white;
+  background: linear-gradient(70deg, rgb(35, 35, 34), rgb(110, 2, 2));
 }
 @media (max-width: 900px) {
   .info-container{
