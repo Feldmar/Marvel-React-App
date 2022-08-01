@@ -6,6 +6,7 @@ import ComicsCard from "./comics-card";
 const ComicsInfo = () => {
     const {id} = useParams();
     const {data, loading} = useComic(id);
+    const seriesId = data?.series.resourceURI.split('/').at(-1)
     return (
         <Spin spinning={loading}>
             <div className="comics-info-container info-container">
@@ -27,6 +28,13 @@ const ComicsInfo = () => {
                     </li>
                 )
             })} </div>
+            <div className="info-series info-item"><span><b>Series:</b></span>
+            <li key={data?.series.name}>
+                        <Link to={'/series/part/' + seriesId}>
+                            <span>{data?.series.name}</span>
+                            </Link>
+                    </li>
+            </div>
            <div className="info-stories info-item"><span><b>Stories:</b> {data?.stories.available ? data?.stories.available : 'No stories available for this comics.'}</span>
             {data?.stories.items.map((item) => {
                 const id = item.resourceURI.split('/').at(-1)

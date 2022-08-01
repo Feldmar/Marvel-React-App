@@ -14,6 +14,7 @@ const ComicsCard: FC<TProps> = ({comic}) => {
 			navigate(`comic/${comic.id}`)
 		}
 	}
+
 	return (
 		<div className="comics-card card" onClick={handler}>
 			<div className="comics-card-wrapper card-wrapper">
