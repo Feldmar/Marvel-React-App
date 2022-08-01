@@ -3,6 +3,10 @@ import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoriesModel } from 'src/models/stories-model';
 
+
+//@ts-ignore
+import img from './ki3.jpg'
+
 type TProps = {
 	story : StoriesModel
 }
@@ -18,7 +22,7 @@ const StoryCard: FC<TProps> = ({story}) => {
 		<div className="story-card card" onClick={handler}>
 			<div className="story-card-wrapper card-wrapper">
 				<div className="story-image">
-					<Image className='image' src="https://www.meme-arsenal.com/memes/482d11436bb5284150a46758244b9711.jpg" />
+					<Image className='image' src={img} />
 				</div>
 				<div className="story-name card-name ">
 					<span> {story.originalIssue.name}</span>
