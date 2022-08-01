@@ -1,12 +1,12 @@
 export type CharacterModel = {
-  	id: number | string,
-  	image: string,
-  	name: string,
-  	description: string,
-  	thumbnail: {
-    	extension: string,
-    	path: string
-  	},
+  id: number | string,
+  image: string,
+  name: string,
+  description: string,
+  thumbnail: {
+    extension: string,
+    path: string
+  },
 	comics: {
 		available: any,
 		returned: any,

@@ -1,11 +1,11 @@
 export type ComicsModel = {
-  	id:number | string,
-  	title: string,
-  	description: string,
+  id:number | string,
+  title: string,
+  description: string,
 	thumbnail: {
-    	extension: string,
-    	path: string
-  	},
+    extension: string,
+    path: string
+  },
 	creators: {
 		available: any,
 		items: [{

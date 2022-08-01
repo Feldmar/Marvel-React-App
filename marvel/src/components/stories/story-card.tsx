@@ -3,7 +3,6 @@ import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoriesModel } from 'src/models/stories-model';
 
-
 //@ts-ignore
 import img from './ki3.jpg'
 
