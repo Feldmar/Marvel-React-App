@@ -6,7 +6,7 @@ import HeroCard from "./hero-card";
 const CharactersInfo = ()=> {
   const {id} = useParams();
   const {data, loading} = useCharacter(id);
-  
+
   return (
     <Spin spinning={loading}>
       <div className="characters-info-container info-container">
@@ -17,11 +17,13 @@ const CharactersInfo = ()=> {
           <div className="info-name info-item"><span><b>Name: </b>{data?.name}</span>
             <div><span><b>Description:</b> {data?.description ? data?.description  : 'No information available for this character.'}</span></div></div>
           <div className="info-stories info-item"><span><b>Stories:</b> {data?.stories.available ? data?.stories.available : 'No stories available for this character.'}</span>
-            {data?.stories.items.map((item) => {
+          {data?.stories.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
                 <li key={item.name}>
-                  <Link to={'/stories/story/' + id}><span>{item.name}</span></Link>
+                  <Link to={'/stories/story/' + id}>
+                    <span>{item.name}</span>
+                  </Link>
                 </li>
               )
             })}

@@ -15,38 +15,38 @@ import { TRoute } from '../types/route';
 import { Paths } from './path';
 
 export const ChartersRoutes: TRoute[] = [
-  { path: '', element: <CharactersWrapper />, name: 'Characters' },
-  { path: Paths.character, element: <CharactersInfo />, name: 'Characters1' },
+  { path: '', element: <CharactersWrapper /> },
+  { path: Paths.character, element: <CharactersInfo /> },
 ];
 export const ComicsRoutes: TRoute[] = [
-  { path: '', element: <ComicsWrapper />, name: 'Comics' },
-  { path: Paths.comic, element: <ComicsInfo />, name: 'Comics1' },
+  { path: '', element: <ComicsWrapper /> },
+  { path: Paths.comic, element: <ComicsInfo /> },
 ];
 export const CreatorsRoutes: TRoute[] = [
-  { path: '', element: <CreatorsWrapper />, name: 'Creators' },
-  { path: Paths.creator, element: <CreatorsInfo />, name: 'Creators1' },
+  { path: '', element: <CreatorsWrapper /> },
+  { path: Paths.creator, element: <CreatorsInfo /> },
 ];
 export const EventsRoutes: TRoute[] = [
-  { path: '', element: <EventsWrapper />, name: 'Events' },
-  { path: Paths.event, element: <EventInfo />, name: 'Events1' },
+  { path: '', element: <EventsWrapper /> },
+  { path: Paths.event, element: <EventInfo /> },
 ];
 export const SeriesRoutes: TRoute[] = [
-  { path: '', element: <SeriesWrapper />, name: 'Seies' },
-  { path: Paths.part, element: <PartInfo />, name: 'Part' },
+  { path: '', element: <SeriesWrapper /> },
+  { path: Paths.part, element: <PartInfo /> },
 ];
 export const StoriesRoutes: TRoute[] = [
-  { path: '', element: <StoriesWrapper />, name: 'Stories' },
-  { path: Paths.story, element: <StoryInfo />, name: 'Story' },
+  { path: '', element: <StoriesWrapper /> },
+  { path: Paths.story, element: <StoryInfo /> },
 ];
 
 export const Routes: TRoute[] = [
-  { path: Paths.main, element: null, name: 'Home' },
-  { path: Paths.characters, children: ChartersRoutes, name: 'Characters' },
-  { path: Paths.comics, children: ComicsRoutes, name: 'Comics' },
-  { path: Paths.creators, children: CreatorsRoutes, name: 'Creators' },
-  { path: Paths.events, children: EventsRoutes, name: 'Events' },
-  { path: Paths.series, children: SeriesRoutes, name: 'Series' },
-  { path: Paths.stories, children: StoriesRoutes, name: 'Stories' },
+  { path: Paths.main, element: null },
+  { path: Paths.characters, children: ChartersRoutes },
+  { path: Paths.comics, children: ComicsRoutes },
+  { path: Paths.creators, children: CreatorsRoutes },
+  { path: Paths.events, children: EventsRoutes},
+  { path: Paths.series, children: SeriesRoutes},
+  { path: Paths.stories, children: StoriesRoutes },
 ];
 
 function AppRouting() {
