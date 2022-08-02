@@ -5,7 +5,7 @@ import { useCharacters } from "../hooks/characters-hooks";
 import HeroCard from "./hero-card";
 
 const CharactersWrapper = () => {
-  	const {data, loading, filter, handlerFilter} = useCharacters();
+  const {data, loading, filter, handlerFilter} = useCharacters();
 	const [search, setSearch] = useState("");
 	
 	const handlerPagination = (page: number, pageSize: number) => {
@@ -15,28 +15,27 @@ const CharactersWrapper = () => {
 		setSearch(e.target.value)
 		handlerFilter({...filter, name: e.target.value, offset: page = 1, page: page})
 	}
-  	return (
+  return (
 		<Spin spinning={loading}>
-	  		<div className="characters-wrapper" >
-		  		<div className="characters-title wrapper-title">Characters</div>
-		<Search
-			value={search}
+	  	<div className="characters-wrapper" >
+		  	<div className="characters-title wrapper-title">Characters</div>
+				<Search
+					value={search}
       		placeholder="input search text"
-			onChange= {(e)=> {handlerSearch(e, 1)}}
-		/>
-		  		<div className="characters-block card-block">
+					onChange= {(e)=> {handlerSearch(e, 1)}}
+				/>
+		  	<div className="characters-block card-block">
 					{data?.map((character, index) => {
-			  			return <HeroCard key={index} character={character} />
+			  		return <HeroCard key={index} character={character} />
 					})}
-		</div>
+				</div>
 		  	<Pagination 
-				current={filter?.page}
-				total={filter?.total}
-				pageSize={filter?.limit ? filter?.limit : 10}
-				onChange={handlerPagination}
-			/>
-				
-	  		</div>
+					current={filter?.page}
+					total={filter?.total}
+					pageSize={filter?.limit ? filter?.limit : 10}
+					onChange={handlerPagination}
+				/>
+	  	</div>
 		</Spin>
  	)
 }

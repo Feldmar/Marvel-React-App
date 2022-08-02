@@ -5,7 +5,7 @@ import { useEvents } from "../hooks/events-hooks";
 import EventCard from "./event-card";
 
 const EventsWrapper = () => {
-  	const {data, loading, filter, handlerFilter} = useEvents();
+  const {data, loading, filter, handlerFilter} = useEvents();
 	const [search, setSearch] = useState("");
 
 	const handlerPagination = (page: number, pageSize: number) => {
@@ -15,28 +15,27 @@ const EventsWrapper = () => {
 		setSearch(e.target.value)
 		handlerFilter({...filter, title: e.target.value, offset: page = 1, page: page})
 	}
-  	return (
+  return (
 		<Spin spinning={loading}>
-	  		<div className="events-wrapper" >
-		  		<div className="events-title wrapper-title">Events</div>
-		<Search
-			value={search}
+	  	<div className="events-wrapper" >
+		  	<div className="events-title wrapper-title">Events</div>
+				<Search
+					value={search}
       		placeholder="input search text"
-			onChange= {(e)=> {handlerSearch(e, 1)}}
-		/>
-		  		<div className="events-block card-block">
+					onChange= {(e)=> {handlerSearch(e, 1)}}
+				/>
+		  	<div className="events-block card-block">
 					{data?.map((event, index) => {
-			  			return <EventCard key={index} event={event} />
+			  		return <EventCard key={index} event={event} />
 					})}
-		</div>
+				</div>
 		  	<Pagination 
-				current={filter?.page}
-				total={filter?.total}
-				pageSize={filter?.limit ? filter?.limit : 10}
-				onChange={handlerPagination}
-			/>
-				
-	  		</div>
+					current={filter?.page}
+					total={filter?.total}
+					pageSize={filter?.limit ? filter?.limit : 10}
+					onChange={handlerPagination}
+				/>
+	  	</div>
 		</Spin>
  	)
 }
