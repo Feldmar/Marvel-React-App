@@ -47,8 +47,7 @@ function useCreator(id?: string) {
       setLoading(true);
       (async () => {
         try {
-          const {data: {data}} = await MarvelApi.getCreator(id)  
-          console.log(data);                
+          const {data: {data}} = await MarvelApi.getCreator(id)                 
           setData(data.results[0]);
         } catch (error: any) {
         setError(error.message);

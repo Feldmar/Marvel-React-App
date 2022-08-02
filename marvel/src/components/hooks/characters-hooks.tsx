@@ -36,6 +36,7 @@ function useCharacters() {
   }
   return {data, loading, error, filter, handlerFilter}
 }
+
 function useCharacter(id?: string) {    
   const [data, setData] = useState<null | CharacterModel>(null)
   const [loading, setLoading] = useState<boolean>(false)
@@ -46,8 +47,7 @@ function useCharacter(id?: string) {
       setLoading(true);
       (async () => {
         try {
-          const {data: {data}} = await MarvelApi.getCharacter(id)  
-          console.log(data);                    
+          const {data: {data}} = await MarvelApi.getCharacter(id)                    
           setData(data.results[0]);
         } catch (error: any) {
           setError(error.message);

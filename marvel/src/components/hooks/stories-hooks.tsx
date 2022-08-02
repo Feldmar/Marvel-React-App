@@ -47,8 +47,7 @@ function useStory(id?: string) {
       setLoading(true);
         (async () => {
           try {
-            const {data: {data}} = await MarvelApi.getStory(id)  
-            console.log(data);         
+            const {data: {data}} = await MarvelApi.getStory(id)         
             setData(data.results[0]);
           } catch (error: any) {
             setError(error.message);

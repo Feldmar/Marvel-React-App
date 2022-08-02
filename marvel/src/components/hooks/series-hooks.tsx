@@ -47,8 +47,7 @@ function usePart(id?: string) {
       setLoading(true);
       (async () => {
         try {
-          const {data: {data}} = await MarvelApi.getPart(id)  
-          console.log(data);         
+          const {data: {data}} = await MarvelApi.getPart(id)     
           setData(data.results[0]);
         } catch (error: any) {
           setError(error.message);

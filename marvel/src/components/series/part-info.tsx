@@ -20,7 +20,7 @@ const PartInfo = ()=> {
             {data?.events.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/events/event/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -32,7 +32,7 @@ const PartInfo = ()=> {
             {data?.stories.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/stories/story/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -44,7 +44,7 @@ const PartInfo = ()=> {
             {data?.comics.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/comics/comic/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -56,7 +56,7 @@ const PartInfo = ()=> {
             {data?.creators.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/creators/creator/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -68,7 +68,7 @@ const PartInfo = ()=> {
             {data?.characters.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/characters/character/' + id}>
                     <span>{item.name}</span>
                   </Link>

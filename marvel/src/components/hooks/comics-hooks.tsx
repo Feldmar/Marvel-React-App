@@ -47,8 +47,7 @@ function useComic(id?: string) {
       setLoading(true);
       (async () => {
         try {
-          const {data: {data}} = await MarvelApi.getComic(id)  
-          console.log(data);            
+          const {data: {data}} = await MarvelApi.getComic(id)          
           setData(data.results[0]);
         } catch (error: any) {
           setError(error.message);

@@ -12,7 +12,7 @@ const Header = () => {
         setState(!state)
       }}
       src={img} />
-      <menu className={`header-navigation ${state ? '': 'hide'}`}>
+      <menu className={`header-navigation ${state ? 'hide': ''}`}>
         <div className="menu-home"><NavLink to={Paths.main} className="double-border-button">Home</NavLink></div>
         <div className="menu-characters"><NavLink to={Paths.characters} className="double-border-button">Characters</NavLink> </div>
         <div className="menu-comics"><NavLink to={Paths.comics} className="double-border-button">Comics</NavLink></div>

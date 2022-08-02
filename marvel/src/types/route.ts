@@ -4,6 +4,5 @@ export type TRoute = {
   path: string,
   element?: ReactNode,
   children?:  TRoute[],
-
   index?: boolean,
 }

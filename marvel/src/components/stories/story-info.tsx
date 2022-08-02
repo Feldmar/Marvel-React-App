@@ -14,13 +14,14 @@ const StoryInfo = ()=> {
           {data && <StoryCard story={data}/>}
         </div>
         <div className="info-container-flex">
-          <div className="info-name info-item"><span><b>Name:</b> {data?.title}</span><br />
+          <div className="info-name info-item"><span><b>Title:</b> {data?.title}</span><br />
+          <span><b>Original Issue:</b> {data?.originalIssue.name}</span><br />
             <span><b>Description:</b> {data?.description ? data?.description  : 'No information available for this story.'}</span></div>
           <div className="info-events info-item"><span><b>Events:</b> {data?.events.available ? data?.events.available : 'No events available for this story.'}</span>
             {data?.events.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/events/event/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -32,7 +33,7 @@ const StoryInfo = ()=> {
             {data?.series.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/series/part/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -44,7 +45,7 @@ const StoryInfo = ()=> {
             {data?.comics.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/comics/comic/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -56,7 +57,7 @@ const StoryInfo = ()=> {
             {data?.creators.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/creators/creator/' + id}>
                     <span>{item.name}</span>
                   </Link>
@@ -68,7 +69,7 @@ const StoryInfo = ()=> {
             {data?.characters.items.map((item) => {
               const id = item.resourceURI.split('/').at(-1)
               return (
-                <li key={item.name}>
+                <li key={item.resourceURI}>
                   <Link to={'/characters/character/' + id}>
                     <span>{item.name}</span> 
                   </Link>
