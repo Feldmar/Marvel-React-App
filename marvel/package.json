@@ -30,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://feldmar.github.io/Marvel-React-App/edit/main/marvel/public",
+  "homepage": "https://feldmar.github.io/Marvel-React-App/tree/main/marvel/build",
   "eslintConfig": {
     "extends": [
       "react-app",
