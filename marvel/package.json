@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.0.6",
     "antd": "^4.21.6",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.3.0",
@@ -25,8 +26,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "tslint --fix  --project .",
-    "lint:fix": "eslint ./src/** --fix"
+    "lint:fix": "eslint ./src/** --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://feldmar.github.io/Marvel-React-App/edit/main/marvel/public",
   "eslintConfig": {
     "extends": [
       "react-app",
