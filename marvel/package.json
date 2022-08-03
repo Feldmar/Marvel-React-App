@@ -28,9 +28,9 @@
     "lint": "tslint --fix  --project .",
     "lint:fix": "eslint ./src/** --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
-  "homepage": "https://feldmar.github.io/Marvel-React-App/",
+  "homepage": "https://feldmar.github.io/Marvel-React-App",
   "eslintConfig": {
     "extends": [
       "react-app",
