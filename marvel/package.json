@@ -24,13 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "lint": "tslint --fix  --project .",
-    "lint:fix": "eslint ./src/** --fix",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "react-scripts test"
   },
-  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",
