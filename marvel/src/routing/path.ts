@@ -1,0 +1,15 @@
+export enum Paths  {
+  'main' =  '/',
+  'characters' = '/characters',
+  'character' = '/characters/character/:id',
+  'comics' = '/comics',
+  'comic' = '/comics/comic/:id',
+  'creators' = '/creators',
+  'creator' = '/creators/creator/:id',
+  'events' = '/events',
+  'event' = '/events/event/:id',
+  'series' = '/series',
+  'part' = '/series/part/:id',
+  'stories' = '/stories',
+  'story' = '/stories/story/:id',
+}
